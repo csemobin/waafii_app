@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:waafii/utils/app_colors.dart';
 import 'package:waafii/utils/app_icons.dart';
@@ -43,10 +44,10 @@ class _SplashScreenState extends State<SplashScreen> {
                     Container(
                         alignment: Alignment.center,
                         child: SvgPicture.asset(AppIcons.logoSvg)),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     Text('Trusted Help, Anytime, Anywhere.', style: TextStyle(
                         color: AppColors.textColor,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500
                     ),)
                   ],
@@ -57,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: Color.fromRGBO(7, 161, 136, 0.3),
                 backgroundColor: Color.fromRGBO(62, 244, 183, 0.1),
               ),
-              SizedBox(height: 50,)
+              SizedBox(height: 50.h,)
             ],
           ),
         ],
