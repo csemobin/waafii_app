@@ -79,9 +79,9 @@ flutter:
   # example:
 
 #  fonts:
-#     - family: InterMedium
+#     - family:
 #       fonts:
-#         - asset: fonts/Inter-Medium.otf
+#         - asset: fonts/Inter-Medium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

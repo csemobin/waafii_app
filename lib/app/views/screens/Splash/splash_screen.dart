@@ -13,43 +13,56 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery
+            .of(context)
+            .orientation == Orientation.portrait;
+
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            colors: [
-              Color(0xFF03A188), // #03A188
-              Color.fromRGBO(255, 255, 255, 0), // transparent white
-            ],
-            stops: [0.0, 1.0],
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 250),
-            SvgPicture.asset(AppIcons.logoSvg),
-            SizedBox(height: 20),
-            Text(
-              'Trusted Help, Anytime, Anywhere.',
-              style: TextStyle(
-                color: AppColors.textColor,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'InterMedium',
-                fontSize: 20,
+      body: Stack(
+        children: [
+          // Background Color are here
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.white, Color.fromRGBO(3, 161, 136, 1)],
+                begin: Alignment.center,
+                end: Alignment.topCenter,
               ),
             ),
-            SizedBox(height: 350),
-            CircularProgressIndicator(
-              strokeWidth: 10,
-              color: Color.fromRGBO(62, 244, 183, 0.8),
-            ),
-          ],
-        ),
+          ),
+
+          // Logo and Circular Progress Indicator
+          Flex(
+            direction: isPortrait ? Axis.vertical : Axis.horizontal,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                          alignment: Alignment.center,
+                          child: SvgPicture.asset(AppIcons.logoSvg)),
+                      SizedBox(height: 20),
+                      Text('Trusted Help, Anytime, Anywhere.', style: TextStyle(
+                          color: AppColors.textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500
+                      ),)
+                    ],
+                  ),
+              ),
+              CircularProgressIndicator(
+                strokeWidth: 10,
+                color: Color.fromRGBO(7, 161, 136, 0.3),
+
+                backgroundColor: Color.fromRGBO(62, 244, 183, 0.1),
+              ),
+              SizedBox(height: 50,)
+            ],
+          ),
+        ],
       ),
     );
   }
