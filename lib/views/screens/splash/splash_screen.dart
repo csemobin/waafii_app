@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:waafii/routes/approutes.dart';
 import 'package:waafii/utils/app_colors.dart';
 import 'package:waafii/utils/app_icons.dart';
 
@@ -12,6 +13,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _goToNextRoute();
+  }
+
+  // going form next route
+  Future<void> _goToNextRoute() async {
+    await Future.delayed(Duration(seconds: 3));
+    Navigator.pushReplacementNamed(context, AppRoutes.onboardScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isPortrait =
@@ -53,6 +66,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   ],
                 ),
               ),
+
+              // Bottom Progress Bar
               CircularProgressIndicator(
                 strokeWidth: 10,
                 color: Color.fromRGBO(7, 161, 136, 0.3),
@@ -66,10 +81,3 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-
-/*
-* app_button_color
-* app_colors
-* app_icons
-* app_images
-* */

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget{
         debugShowCheckedModeBanner: false,
         title: "Valentines Pro Service",
         // home: const SplashScreen(),
-        initialRoute: AppRoutes.onboardScreen,
+        initialRoute: AppRoutes.authSelectionScreen,
         getPages: AppRoutes.routes,
         // theme: light(),
         themeMode: ThemeMode.light,

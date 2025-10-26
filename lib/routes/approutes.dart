@@ -1,13 +1,22 @@
 import 'package:get/get.dart';
+import 'package:waafii/views/screens/auth/auth_selection.dart';
+import 'package:waafii/views/screens/auth/sign_up.dart';
+import 'package:waafii/views/screens/auth/validation.dart';
 import 'package:waafii/views/screens/onboard/on_board_screen.dart';
 import 'package:waafii/views/screens/splash/splash_screen.dart';
 
 class AppRoutes{
   static const String splashScreen = '/splash_screen.dart';
   static const String onboardScreen = '/on_board_screen.dart';
+  static const String authSelectionScreen = '/auth_selection.dart';
+  static const String signUp = '/sign_up.dart';
+  static const String validationScreen = '/validation.dart';
 
   static List<GetPage> get routes => [
     GetPage( name: splashScreen, page: () => const SplashScreen()),
     GetPage(name: onboardScreen, page: () => const OnBoardScreen()),
+    GetPage(name: authSelectionScreen, page: () => const AuthSelectionScreen()),
+    GetPage(name: signUp, page: ()=> const SignInScreen()),
+    GetPage(name: validationScreen, page: () => ValidationScreen())
   ];
 }

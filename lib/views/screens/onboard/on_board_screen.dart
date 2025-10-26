@@ -102,7 +102,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                       SizedBox(height: 120),
 
                       isLastPage
-                          ? CustomButton(onTap: () {}, title: 'Get Start')
+                          ? CustomButton(onTap: _onTapGetStartButton, title: 'Get Start')
                           : Column(
                               children: [
                                 CustomButton(
@@ -135,6 +135,10 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         },
       ),
     );
+  }
+  // Get Start Button handler
+  void _onTapGetStartButton(){
+    //TODO /// WOrk
   }
 }
 
