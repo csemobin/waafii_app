@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:waafii/views/screens/auth/auth_selection.dart';
+import 'package:waafii/views/screens/auth/forget_password.dart';
+import 'package:waafii/views/screens/auth/sign_in.dart';
 import 'package:waafii/views/screens/auth/sign_up.dart';
 import 'package:waafii/views/screens/auth/validation.dart';
 import 'package:waafii/views/screens/onboard/on_board_screen.dart';
@@ -11,12 +13,16 @@ class AppRoutes{
   static const String authSelectionScreen = '/auth_selection.dart';
   static const String signUp = '/sign_up.dart';
   static const String validationScreen = '/validation.dart';
+  static const String signInScreen = '/sign_in.dart';
+  static const String forgetPasswordScreen = '/forget_password.dart';
 
   static List<GetPage> get routes => [
     GetPage( name: splashScreen, page: () => const SplashScreen()),
     GetPage(name: onboardScreen, page: () => const OnBoardScreen()),
     GetPage(name: authSelectionScreen, page: () => const AuthSelectionScreen()),
-    GetPage(name: signUp, page: ()=> const SignInScreen()),
-    GetPage(name: validationScreen, page: () => ValidationScreen())
+    GetPage(name: signUp, page: ()=> const SignUpScreen()),
+    GetPage(name: validationScreen, page: () => ValidationScreen()),
+    GetPage(name: signInScreen, page: () => SignInScreen()),
+    GetPage(name: forgetPasswordScreen, page: () => ForgetPassword())
   ];
 }
