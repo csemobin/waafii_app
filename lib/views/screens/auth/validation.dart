@@ -87,30 +87,26 @@ class _ValidationScreenState extends State<ValidationScreen> {
                       fieldHeight: 50,
                       fieldWidth: 40,
                     ),
-
-                    /*
-                    * gray-200
-                    * orange
-                    *
-                    * */
                     animationDuration: Duration(milliseconds: 300),
                     enableActiveFill: true,
                     controller: _otpTEController,
-
-                    beforeTextPaste: (text) {
-                      print("Allowing to paste $text");
-                      //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                      //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                      return true;
-                    }, appContext: context,
+                    appContext: context,
 
                   ),
                   /* Pin Related Work are end here */
-
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Didn\'t get the code ?'),
+                      TextButton(onPressed: (){}, child: Text('Resend'))
+                    ],
+                  ),
+                  SizedBox(height: height*0.2,),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: CustomButton(onTap: (){},title: "Verify",),
                   )
+
                 ],
               ),
             ),
@@ -119,7 +115,12 @@ class _ValidationScreenState extends State<ValidationScreen> {
       ),
     );
   }
-
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _otpTEController.dispose();
+  }
   void _onTapTermsHandler(){
     // TODO : using On tap Terms
   }
