@@ -5,4 +5,5 @@ class AppImagePath{
   static const String onboardingThirdPng= '$_imagePath/onboard_third.png';
   static const String oppupPng = '$_imagePath/popup.png';
   static const String errorImagePng = '$_imagePath/error_image.png';
+  static const String bannerImagePng = '$_imagePath/banner.png';
 }

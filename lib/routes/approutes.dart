@@ -8,7 +8,11 @@ import 'package:waafii/views/screens/auth/sign_up.dart';
 import 'package:waafii/views/screens/auth/terms_condition.dart';
 import 'package:waafii/views/screens/auth/validation.dart';
 import 'package:waafii/views/screens/error/error_screen.dart';
+import 'package:waafii/views/screens/home_screen/client_home_screen.dart';
 import 'package:waafii/views/screens/onboard/on_board_screen.dart';
+import 'package:waafii/views/screens/profile/provider_profile.dart';
+import 'package:waafii/views/screens/profile/user_profile.dart';
+import 'package:waafii/views/screens/service/service_screen.dart';
 import 'package:waafii/views/screens/splash/splash_screen.dart';
 
 class AppRoutes{
@@ -23,7 +27,10 @@ class AppRoutes{
   static const String termsAndConditionScreen = '/terms_condition.dart';
   static const String privacyPolicyScreen = '/privacy_policy.dart';
   static const String errorScreen = '/error_screen.dart';
-
+  static const String userProfileScreen = '/user_profile.dart';
+  static const String providerProfileScreen = '/provider_profile.dart';
+  static const String clientHomeScreen = '/client_home_screen.dart';
+  static const String serviceScreen = '/service_screen.dart';
 
   static List<GetPage> get routes => [
     GetPage( name: splashScreen, page: () => const SplashScreen()),
@@ -37,5 +44,11 @@ class AppRoutes{
     GetPage(name: termsAndConditionScreen, page: () => const TermsAndConditionScreen()),
     GetPage(name: privacyPolicyScreen, page:()=>const PrivacyPolicyScreen()),
     GetPage(name: errorScreen, page: () => const ErrorScreen()),
+    GetPage(name: userProfileScreen, page: () => const UserProfile()),
+    GetPage(
+        name: providerProfileScreen, page: () => const ProviderProfileScreen()),
+    GetPage(name: clientHomeScreen, page: () => const ClientHomeScreen()),
+    GetPage(name: serviceScreen, page: ()=> const ServiceScreen()),
+
   ];
 }
