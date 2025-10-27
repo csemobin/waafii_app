@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:waafii/global/custom_assets/custom_button.dart';
-import 'package:waafii/routes/approutes.dart';
 import 'package:waafii/utils/app_colors.dart';
 import 'package:waafii/utils/app_images.dart';
 
@@ -50,9 +49,31 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                _pages.length,
+                    (index) =>
+                    Container(
+                      width: selectedPageIndex == index ? 40 : 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                        color: selectedPageIndex == index
+                            ? Colors.orange
+                            : Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: 4,
+                          vertical: 4
+                      ),
+                    ),
+              ),
+            ),
+
             SizedBox(height: 24),
+
             Text(
               _pages[selectedPageIndex].customTitle,
               style: TextStyle(
@@ -121,6 +142,47 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
             height: double.maxFinite,
             fit: BoxFit.cover,
           );
+
+          //   Flex(
+          //   direction: Axis.vertical,
+          //   children: [
+          //     Flexible(
+          //       child:
+          //     ),
+          //     Flexible(
+          //       child: Padding(
+          //         padding: const EdgeInsets.symmetric(horizontal: 20),
+          //         child: SingleChildScrollView(
+          //           child: Column(
+          //             children: [
+          //               SizedBox(height: 24),
+          //               Row(
+          //                 mainAxisAlignment: MainAxisAlignment.center,
+          //                 children: List.generate(
+          //                   _pages.length,
+          //                   (index) => Container(
+          //                     margin: EdgeInsets.only(right: 6),
+          //                     height: 7,
+          //                     width: selectedPageIndex == index ? 50 : 10,
+          //                     decoration: BoxDecoration(
+          //                       borderRadius: BorderRadius.circular(20),
+          //                       color: selectedPageIndex == index
+          //                           ? Colors.orange
+          //                           : Colors.grey,
+          //                       // shape: BoxShape.circle,
+          //                     ),
+          //                   ),
+          //                 ),
+          //               ),
+          //
+          //
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // );
         },
       ),
     );
@@ -128,7 +190,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
 
   // Get Start Button handler
   void _onTapGetStartButton() {
-    Navigator.pushReplacementNamed(context, AppRoutes.authSelectionScreen);
+    //TODO /// WOrk
   }
 }
 
