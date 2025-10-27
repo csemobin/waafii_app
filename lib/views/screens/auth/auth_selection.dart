@@ -169,7 +169,7 @@ class _AuthSelectionScreenState extends State<AuthSelectionScreen> {
                 SizedBox(height: height * 0.06),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: CustomButton(onTap: () {}, title: "Next"),
+                  child: CustomButton(onTap: _onTapSignUpHandler, title: "Next"),
                 ),
                 SizedBox(height: height * 0.01),
                 RichText(
@@ -203,9 +203,9 @@ class _AuthSelectionScreenState extends State<AuthSelectionScreen> {
     );
   }
 
-// Sign In handler are here
-  void _onTapSignInHandler() {
-        Navigator.pushReplacementNamed(context, AppRoutes.signUp);
-  }
+
+  void _onTapSignInHandler() => Navigator.pushReplacementNamed(context, AppRoutes.signInScreen);
+  void _onTapSignUpHandler() => Navigator.pushNamed(context, AppRoutes.signUp);
+
 
 }

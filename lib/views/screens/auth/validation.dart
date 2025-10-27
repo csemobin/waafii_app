@@ -27,7 +27,7 @@ class _ValidationScreenState extends State<ValidationScreen> {
       // extendBodyBehindAppBar: true,
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: Text('Varify'),
 
         backgroundColor: AppColors.backgroundColor,
         centerTitle: true,

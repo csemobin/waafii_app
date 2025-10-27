@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:waafii/global/custom_assets/custom_button.dart';
 import 'package:waafii/global/custom_assets/custom_input_field.dart';
+import 'package:waafii/routes/approutes.dart';
 import 'package:waafii/utils/app_colors.dart';
 import 'package:waafii/utils/app_icons.dart';
 
@@ -92,26 +94,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      TextButton(onPressed: () {}, child: Text('Forgot Password', style: TextStyle(
+                      TextButton(onPressed: _forgotPasswordHandler, child: Text('Forgot Password', style: TextStyle(
                         color: AppColors.greyColor
                       ),)),
                     ],
                   ),
 
-                  // RichText(
-                  //   text: TextSpan(
-                  //     text: 'Don \'t have any account',
-                  //     style: TextStyle(color: Colors.red),
-                  //     children: [
-                  //       TextSpan(
-                  //         text: 'Sign Up',
-                  //
-                  //       ),
-                  //
-                  //     ],
-                  //   ),
-                  // ),
-                  //
                   SizedBox(height: height * 0.04),
 
                   SizedBox(height: height * 0.06),
@@ -124,15 +112,15 @@ class _SignInScreenState extends State<SignInScreen> {
 
                     text: TextSpan(
 
-                      text: 'Already have an account ? ',
+                      text: 'Don\'t have an account ? ',
                       style: TextStyle(
                         color: AppColors.greyColor,
 
                       ),
                       children: [
                         TextSpan(
-
-                            text: 'Sign In',
+                            recognizer: TapGestureRecognizer()..onTap = _onTapSignUpHandler,
+                            text: 'Sign Up',
                             style: TextStyle(
                                 color: AppColors.primaryColor
                             )
@@ -149,5 +137,11 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
     );
+
+  }
+  
+  void _forgotPasswordHandler() => Navigator.pushNamed(context, AppRoutes.forgetPasswordScreen);
+  void _onTapSignUpHandler(){
+    Navigator.pushNamed(context, AppRoutes.signUp);
   }
 }
