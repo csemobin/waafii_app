@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:waafii/utils/app_colors.dart';
 
 const String termsAndConditions = '''
 Last updated: 12/04/2025
@@ -84,17 +84,27 @@ class TermsAndConditionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        forceMaterialTransparency: true,
         title: Text('Terms & Conditions'),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: AppColors.primaryColor, width: 2),
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+          ),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+            child: SelectableText(
 
-        padding: const EdgeInsets.all(16),
-        child: SelectableText(
-            termsAndConditions,
-          style: const TextStyle(fontSize: 16,height: 1.4),
+                termsAndConditions,
+            ),
+          ),
         ),
       ),
     );

@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:waafii/views/screens/auth/auth_selection.dart';
 import 'package:waafii/views/screens/auth/forget_password.dart';
+import 'package:waafii/views/screens/auth/privacy_policy.dart';
 import 'package:waafii/views/screens/auth/reset_password.dart';
 import 'package:waafii/views/screens/auth/sign_in.dart';
 import 'package:waafii/views/screens/auth/sign_up.dart';
 import 'package:waafii/views/screens/auth/terms_condition.dart';
 import 'package:waafii/views/screens/auth/validation.dart';
+import 'package:waafii/views/screens/error/error_screen.dart';
 import 'package:waafii/views/screens/onboard/on_board_screen.dart';
 import 'package:waafii/views/screens/splash/splash_screen.dart';
 
@@ -19,6 +21,8 @@ class AppRoutes{
   static const String forgetPasswordScreen = '/forget_password.dart';
   static const String resetPasswordScreen = '/reset_password.dart';
   static const String termsAndConditionScreen = '/terms_condition.dart';
+  static const String privacyPolicyScreen = '/privacy_policy.dart';
+  static const String errorScreen = '/error_screen.dart';
 
 
   static List<GetPage> get routes => [
@@ -31,5 +35,7 @@ class AppRoutes{
     GetPage(name: forgetPasswordScreen, page: () => ForgetPassword()),
     GetPage(name: resetPasswordScreen, page: ()=> ResetPasswordScreen()),
     GetPage(name: termsAndConditionScreen, page: () => const TermsAndConditionScreen()),
+    GetPage(name: privacyPolicyScreen, page:()=>const PrivacyPolicyScreen()),
+    GetPage(name: errorScreen, page: () => const ErrorScreen()),
   ];
 }
