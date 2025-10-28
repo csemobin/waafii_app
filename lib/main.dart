@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget{
         // home: const SplashScreen(),
         // initialRoute: AppRoutes.userProfileScreen,
         // initialRoute: AppRoutes.clientHomeScreen,
-        initialRoute: AppRoutes.serviceScreen,
+        initialRoute: AppRoutes.clientHomeScreen,
 
         getPages: AppRoutes.routes,
 
