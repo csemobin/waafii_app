@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
       builder: (context, child) => GetMaterialApp(
 
         // useInheritedMediaQuery: true,
@@ -20,14 +23,13 @@ class MyApp extends StatelessWidget{
         // home: const SplashScreen(),
         // initialRoute: AppRoutes.userProfileScreen,
         // initialRoute: AppRoutes.clientHomeScreen,
-        initialRoute: AppRoutes.clientHomeScreen,
+        initialRoute: AppRoutes.clientBottomNavigationScreens,
 
         getPages: AppRoutes.routes,
 
         // theme: light(),
         themeMode: ThemeMode.light,
       ),
-      designSize: const Size(393, 852),
     );
   }
 }
