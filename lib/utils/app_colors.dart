@@ -9,4 +9,6 @@ class AppColors{
   static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);
   static const Color bordarColor = Color.fromRGBO(245, 130, 32, 0.5);
   static const Color termAndConditionBackgroundColor = Color.fromRGBO(245, 246, 255, 1);
+  static const Color colorWhite = Color.fromRGBO(255, 255, 255, 1);
+  static const Color secondaryBorderColor = Color.fromRGBO(237, 237, 237, 1);
 }

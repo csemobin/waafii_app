@@ -28,7 +28,7 @@ class _ClientHomeScreenState extends State<ClientHomeScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.r),
           child: Column(
             children: [
               // Name and Notification Section
@@ -40,6 +40,7 @@ class _ClientHomeScreenState extends State<ClientHomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Welcome back'),
+                      SizedBox(height: 5.h),
                       Text(
                         'Maruf Mobin',
                         style: TextStyle(
@@ -51,7 +52,10 @@ class _ClientHomeScreenState extends State<ClientHomeScreen> {
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.notification_add_sharp, color: AppColors.primaryColor,),
+                    icon: Icon(
+                      Icons.notification_add_sharp,
+                      color: AppColors.primaryColor,
+                    ),
                   ),
                 ],
               ),
@@ -150,30 +154,32 @@ class _ClientHomeScreenState extends State<ClientHomeScreen> {
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    mainAxisSpacing: 6,
+                    mainAxisSpacing: 20,
                   ),
 
                   itemBuilder: (context, index) => Center(
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          // height: 55.h,
-                          // width: 55.w,
-
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Color.fromRGBO(245, 245, 247, 1),
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10.r),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color.fromRGBO(245, 245, 247, 1),
+                            ),
+                            child: SvgPicture.asset(
+                              _ourServices[index]['icon']!,
+                            ),
                           ),
-                          child: SvgPicture.asset(_ourServices[index]['icon']!),
-                        ),
-                        Text(
-                          _ourServices[index]['name']!,
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
+                          SizedBox(height: 10.h),
+                          Text(
+                            _ourServices[index]['name']!,
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

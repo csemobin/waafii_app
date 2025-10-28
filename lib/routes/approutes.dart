@@ -8,6 +8,7 @@ import 'package:waafii/views/screens/auth/sign_up.dart';
 import 'package:waafii/views/screens/auth/terms_condition.dart';
 import 'package:waafii/views/screens/auth/validation.dart';
 import 'package:waafii/views/screens/client/client_bottom_navigation_control_screens.dart';
+import 'package:waafii/views/screens/client/service/service_request_screen.dart';
 import 'package:waafii/views/screens/error/error_screen.dart';
 import 'package:waafii/views/screens/client/home/client_home_screen.dart';
 import 'package:waafii/views/screens/onboard/on_board_screen.dart';
@@ -33,6 +34,7 @@ class AppRoutes{
   static const String clientHomeScreen = '/client_home_screen.dart';
   static const String serviceScreen = '/service_screen.dart';
   static const String clientBottomNavigationScreens = '/client_bottom_navigation_control_screens.dart';
+  static const String serviceRequestScreen = '/service_request_screen.dart';
 
   static List<GetPage> get routes => [
     GetPage( name: splashScreen, page: () => const SplashScreen()),
@@ -51,6 +53,7 @@ class AppRoutes{
         name: providerProfileScreen, page: () => const ProviderProfileScreen()),
     GetPage(name: clientHomeScreen, page: () => const ClientHomeScreen()),
     GetPage(name: serviceScreen, page: ()=> const ServiceScreen()),
-    GetPage(name: clientBottomNavigationScreens, page: () => const ClientBottomNavigationControlScreens())
+    GetPage(name: clientBottomNavigationScreens, page: () => const ClientBottomNavigationControlScreens()),
+    GetPage(name: serviceRequestScreen, page: () => const ServiceRequestScreen()),
   ];
 }
